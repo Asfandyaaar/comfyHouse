@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+:root {
+  --primaryColor: #f09d51;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Lato', sans-serif;
+}
+#navbar{
+    width:100%;
+    height:10vh;
+    background:var(--mainGrey);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0px 5rem;
+    position:sticky;
+    top:0;
+    
+}
+#navbar .fa-bars{
+    font-size:1.5rem;
+    cursor:pointer;
+    animation:bounce 3s linear infinite;
+}
+@keyframes bounce{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.5);
+        box-shadow:1px 1px 10px rgb(5, 112, 219);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.logo span{
+    color:var(--primaryColor);
+}
+#cart-item {
+    position:absolute;
+    top:-15px;
+    right:-10px;
+    background:var(--primaryColor);
+    color:var(--mainWhite);
+    padding:2px 6px;
+    border-radius:10px;
+}
+.fa-cart-plus{
+    font-size:1.5rem;
+}
+
+/* welcome section css */
+#welcome{
+    width:100%;
+    min-height:100vh;
+    background:url('./images/hero-bcg.jpeg');
+    background-size:100% 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#banner{
+    background:rgba(255, 255, 255, 0.8);
+    padding:2rem;
+    text-align:center;
+}
+#banner-title{
+    font-size:3.2rem;
+    margin-bottom:2rem;
+    text-transform:uppercase;
+}
+#shopBtn{
+    padding:0.5rem 1.5rem;
+    background:var(--primaryColor);
+    border-radius:3px;
+    border: 1px solid var(--primaryColor);
+    outline:none;
+    font-size:1rem;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:var(--mainTransition);
+}
+#shopBtn:hover{
+    color:var(--primaryColor);
+    background:transparent;
+}
+
+/* product section css */
+#product{
+    padding:3rem 0px;
+}
+#product-title h2{
+    text-align:center;
+    margin-bottom:2rem;
+    font-size:2rem;
+}
+#product-container{
+    width:90%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px, 1fr));
+    column-gap: 2.3rem;
+    place-items:center;
+}
+#single-product{
+    text-align:center;
+    width:300px;
+    /* border:2px solid black; */
+}
+#img-container{
+    position:relative; 
+    overflow:hidden;
+}
+#img-container img{
+    width:100%;
+}
+#addToCart-btn{
+    position:absolute;
+    right:0;
+    bottom:2rem;
+    background:var(--primaryColor);
+    cursor:pointer;
+    padding:.5rem;
+    border:2px solid var(--primaryColor);
+    font-size:15px;
+    font-weight:600;
+    border-radius:3px 0px 0px 3px;
+    transform:translatex(100%);
+    transition:var(--mainTransition);
+}
+#addToCart-btn:hover{
+    color:var(--mainWhite);
+}
+#img-container:hover #addToCart-btn{
+    transform:translateX(0%);
+}
+#addToCart-btn i{
+    margin-right:0.3rem;
+}
+#single-product h2{
+    margin:0.5rem 0rem;
+    font-size:20px;
+}
+#single-product h3{
+    color:var(--primaryColor);
+    font-size:16px;
+}
+#product-img{
+    display:block;
+    height:12rem;
+    transition:var(--mainTransition);
+}
+#img-container:hover #product-img{
+    opacity:0.5;
+}
+
+/* cart css    */
+#cart-overlay{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    right:0;
+    background:rgba(0, 0, 0, 0.5);
+    visibility:hidden;
+}
+#cart{
+    width:30rem;
+    height:100%;
+    padding:2rem;
+    position:fixed;
+    top:0;
+    right:0;
+    background:var(--mainGrey);
+    overflow:scroll;
+    transition:var(--mainTransition);
+    transform:translateX(100%);
+}
+.showCart{
+    transform:translatex(0);
+}
+.transparentbg{
+    visibility:visible;
+}
+#cart-single-item{
+    width:100%;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    column-gap:1.5rem;
+}
+#cart-single-item img{
+    width:4.3rem;
+    height:3.5rem;
+}
+#close-cart{
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+#cart h2{
+    text-align:center;
+    text-transform:capitalize;
+    margin-bottom:2rem;
+}
+
+#cart-footer{
+    width:100%;
+    text-align:center;
+    margin-top:3rem;
+}
+#clear-cart-btn{
+    padding:.4rem 1.6rem;
+    background:var(--primaryColor);
+    border:2px solid var(--primaryColor);
+    border-radius:2px;
+    font-size:15px;
+    font-weight:600;
+    margin-top:.8rem;
+    cursor:pointer;
+  
+}
+.fa-chevron-up,
+.fa-chevron-down {
+  color: var(--primaryColor);
+  cursor: pointer;
+}
+.item-amount{
+    text-align:center;
+}
